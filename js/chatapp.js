@@ -15,24 +15,25 @@
             clearTimeout(to);
             to = null;
         }
-     
-            ref.set('Is typing');
-            to = setTimeout(stoppedTyping, 1000);
+
+        ref.set('Is typing');
+        to = setTimeout(stoppedTyping, 1000);
     }
 
     function stoppedTyping() {
         to = null;
         ref.remove();
     }
-    function logValue(snapshot) {
 
-        $('.person-typing').text(snapshot.val());
+    function logValue(snapshot) {
+        if ((snapshot.val()))
+            $('.person-typing').text(snapshot.val());
 
     }
 
     messageField.keypress(function(e) {
         if (e.keyCode == 13) {
-            to=null;
+            to = null;
             var message = messageField.val();
             ref
                 .push({
