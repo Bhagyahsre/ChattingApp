@@ -1,0 +1,9 @@
+{
+  "firebase": "chattingapp123",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
